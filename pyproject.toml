@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "icpp-kernel"
+version = "1.0.0"
+description = "An interactive C++17 kernel for Jupyter Notebooks. Supports cin input box, infinite loop stop, error coloring, and //%cflags magic."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+dependencies = [
+    "ipykernel>=6.0",
+    "jupyter_client>=7.0",
+]
+
+[project.scripts]
+install-icpp-kernel = "icpp_kernel.install:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["icpp_kernel*"]
